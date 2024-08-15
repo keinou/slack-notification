@@ -62,7 +62,7 @@ async function main() {
             ].concat(jobs.jobs.filter((job) => job.status === 'completed').map(job => {
                 var icon = '';
                 if (job.status === 'completed') {
-                    icon = job.conclusion === 'success' ? '✅' : '❌';
+                    icon = job.conclusion === 'success' ? '✅' : job.conclusion === 'skipped' ? ':arrow_right:' : ':x:';
                 } else {
                     icon = '🔄';
                 }
