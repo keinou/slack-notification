@@ -4,7 +4,7 @@ import { IncomingWebhook } from '@slack/webhook';
 import { Octokit } from "octokit";
 
 const slackWebhook = core.getInput('slack-webhook');
-const githubToken = process.env.GITHUB_TOKEN;
+const githubToken = core.getInput('github-token') ?? process.env.GITHUB_TOKEN;
 const owner = process.env.GITHUB_REPOSITORY_OWNER;
 const repositoryName = process.env.GITHUB_REPOSITORY;
 const runId = process.env.GITHUB_RUN_ID;

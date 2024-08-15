@@ -9,6 +9,9 @@ inputs:
   slack-webhook:
     description: "The slack webhook url"
     required: true
+  github-token:
+    description: "The github token used to send the notification in slack. Default is GITHUB_TOKEN env"
+    required: false
 
 runs:
   using: "node20"
