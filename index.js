@@ -1,5 +1,4 @@
 
-import * as core from "@actions/core";
 import { IncomingWebhook } from '@slack/webhook';
 import { Octokit } from "octokit";
 
@@ -28,7 +27,6 @@ async function main() {
         repo: repository,
         run_id: runId,
     });
-
 
     const jobs = responseJobs.data;
 
@@ -60,7 +58,7 @@ async function main() {
                 {
                     "type": "divider"
                 }
-            ].concat(jobs.jobs.map(job => {
+            ].concat(jobs.jobs.filter((job) => job.status === 'completed').map(job => {
                 var icon = '';
                 if (job.status === 'completed') {
                     icon = job.conclusion === 'success' ? '✅' : '❌';
