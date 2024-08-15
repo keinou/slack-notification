@@ -1,0 +1,15 @@
+name: GitHub actions Slack Notifification
+author: Rafael Karczevski <rkarczevski@gmail.com>
+description: GitHub action used to send notification in slack
+branding:
+  icon: feather
+  color: gray-dark
+
+inputs:
+  slack-webhook:
+    description: "The slack webhook url"
+    required: true
+
+runs:
+  using: 'node20'
+  main: 'index.js'
