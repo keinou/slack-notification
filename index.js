@@ -1,4 +1,5 @@
 
+import * as core from "@actions/core";
 import { IncomingWebhook } from '@slack/webhook';
 import { Octokit } from "octokit";
 
